@@ -11,25 +11,24 @@ const InvestmentForm = ({ formData, setFormData }) => {
     <div>
       <label htmlFor='initialInvestment'>Initial Investment</label>
         <input 
-          type="text" 
+          type="number" 
           name='initialInvestment'
           value={formData.initialInvestment}
           onChange={handleChange}
           />
         <label htmlFor='expectedReturn'>Expected Return</label>
           <input 
-          type="text" 
+          type="number" 
           name='expectedReturn'
           value={formData.expectedReturn}
           onChange={handleChange} 
           />
-          
         </div>
 
       <div>
         <label htmlFor='annualInvestment'>Annual Investment</label>
           <input 
-          type="text" 
+          type="number" 
           name='annualInvestment'
           value={formData.annualInvestment}
           onChange={handleChange} 
@@ -37,7 +36,7 @@ const InvestmentForm = ({ formData, setFormData }) => {
         
         <label htmlFor='duration'>duration</label>
           <input 
-          type="text" 
+          type="number" 
           name='duration'
           value={formData.duration}
           onChange={handleChange} 
