@@ -29,9 +29,12 @@ function App() {
     }
   }, [formData]);
 
+  const inputIsValid = formData.duration >= 1;
+
   return (<>
     <Header />
     <InvestmentForm formData={formData} setFormData={setFormData}/>
+    {!inputIsValid && <p className="center">Please enter valid data</p>}
     {tableData && <Table data={tableData} />}
     </>
   );

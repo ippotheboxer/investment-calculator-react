@@ -3,7 +3,7 @@ import React from 'react';
 const InvestmentForm = ({ formData, setFormData }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((prevData) => ({ ...prevData, [name]: +value }));
   };
 
   return (
