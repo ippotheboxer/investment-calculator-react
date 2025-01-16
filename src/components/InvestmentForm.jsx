@@ -1,30 +1,48 @@
 import React from 'react';
 
-const InvestmentForm = () => {
-  return (
-    <form id='user-input' className='input-group'>
-      <div>
-        <label htmlFor="initial">
-          Initial Investment
-          <input type="text" name='initial'/>
-        </label>
+const InvestmentForm = ({ formData, setFormData }) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-          <label htmlFor="initial">
-            Annual Investment
-            <input type="text" name='annual' />
-          </label>
+  return (
+  <form id='user-input' className='input-group'>
+    <div>
+      <label htmlFor='initialInvestment'>Initial Investment</label>
+        <input 
+          type="text" 
+          name='initialInvestment'
+          value={formData.initialInvestment}
+          onChange={handleChange}
+          />
+        <label htmlFor='expectedReturn'>Expected Return</label>
+          <input 
+          type="text" 
+          name='expectedReturn'
+          value={formData.expectedReturn}
+          onChange={handleChange} 
+          />
+          
         </div>
 
       <div>
-        <label htmlFor="initial">
-          Expected Return
-          <input type="text" name='return' />
-        </label>
+        <label htmlFor='annualInvestment'>Annual Investment</label>
+          <input 
+          type="text" 
+          name='annualInvestment'
+          value={formData.annualInvestment}
+          onChange={handleChange} 
+          />
         
-        <label htmlFor="initial">
-          duration
-          <input type="text" name='duration' />
-        </label>
+        <label htmlFor='duration'>duration</label>
+          <input 
+          type="text" 
+          name='duration'
+          value={formData.duration}
+          onChange={handleChange} 
+          />
+        
         </div>    
     </form>
   );
